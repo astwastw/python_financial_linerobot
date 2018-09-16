@@ -180,7 +180,7 @@ def callback():
     return 'OK'
 
 
-@handler.add(MessageEvent, message=TextMessage)
+@handler.add(MessageEvent, message=TextMessage)   #line api的寫法 (line api 文件有 (python line sdk))
 def handle_message(event):  
     ### 抓到顧客的資料 ###
     profile = line_bot_api.get_profile(event.source.user_id)
@@ -201,7 +201,7 @@ def handle_message(event):
     elif re.match('[0-9]{4}',usespeak): # 如果只有給四個數字就判斷是股票查詢
         line_bot_api.push_message(uid, TextSendMessage('稍等一下, 雲端運算中...'))
         ######### 開始請求網站，報價 ##########
-        url = 'https://tw.stock.yahoo.com/q/q?s=' + message # 要請求的網址
+        url = 'https://tw.stock.yahoo.com/q/q?s=' + usespeak # 要請求的網址
         list_req = requests.get(url) #請求
         soup = BeautifulSoup(list_req.content, "html.parser") # 取得所有網站內容
         getstock= soup.find('b').text # 拉出股價
