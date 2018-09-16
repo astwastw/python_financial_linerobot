@@ -209,10 +209,12 @@ def handle_message(event):
         return 0
     
     elif re.match('我的股票',usespeak):  # 秀出所有自動推撥的股票
+        return 0
     
     elif re.match('咖波',usespeak):
         line_bot_api.push_message(uid, TextSendMessage('幹嘛，你有肉肉嗎?')
-
+        return 0
+    
         get=mongodb.show_user_stock_fountion()
         msg=''
 
