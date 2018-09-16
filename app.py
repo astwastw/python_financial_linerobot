@@ -149,7 +149,7 @@ from flask import Flask, request, abort
 from linebot import (LineBotApi, WebhookHandler, exceptions)
 from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
-import mongodb
+import mongodb   #另一個py file
 import re
 import json
 import Standard_Deviation
@@ -210,10 +210,7 @@ def handle_message(event):
     
     elif re.match('我的股票',usespeak):  # 秀出所有自動推撥的股票
         return 0
-    
-    elif re.match('咖波',usespeak):
-        line_bot_api.push_message(uid, TextSendMessage('幹嘛，你有肉肉嗎?')
-        return 0
+
     
         get=mongodb.show_user_stock_fountion()
         msg=''
