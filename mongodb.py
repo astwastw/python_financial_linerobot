@@ -10,8 +10,8 @@ from pymongo import MongoClient
 import urllib.parse
 import datetime
 
-username = urllib.parse.quote_plus('astwastw') 
-password = urllib.parse.quote_plus('a0921791395')
+username = urllib.parse.quote_plus('') 
+password = urllib.parse.quote_plus('')
 host = 'ds163870.mlab.com' #主機位置
 port = '63870' #port號碼
 dbname='financial_linerobot'
